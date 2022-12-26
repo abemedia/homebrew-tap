@@ -9,20 +9,20 @@ class Appcast < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/abemedia/appcast/releases/download/v0.1.0/appcast_0.1.0_darwin_amd64"
-      sha256 "06821a99816f72845f6db7cb2f5977546eccfce0cc867493a490293857a40a20"
-
-      def install
-        bin.install "appcast_0.1.0_darwin_amd64" => "appcast"
-      end
-    end
     if Hardware::CPU.arm?
       url "https://github.com/abemedia/appcast/releases/download/v0.1.0/appcast_0.1.0_darwin_arm64"
-      sha256 "93b6a3d0f2d9bb367871c221f4033f5dd8bdfb9bf8496c9f4a9dcd37b220426c"
+      sha256 "ca8061d6efa658b76083627b3664ea3ad65f41735762bc352b29b8c88f4c4d56"
 
       def install
         bin.install "appcast_0.1.0_darwin_arm64" => "appcast"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/abemedia/appcast/releases/download/v0.1.0/appcast_0.1.0_darwin_amd64"
+      sha256 "8699b28daca4bb148e1997962e73ad364896593b273ce15da7a9525b2b708a6d"
+
+      def install
+        bin.install "appcast_0.1.0_darwin_amd64" => "appcast"
       end
     end
   end
@@ -30,7 +30,7 @@ class Appcast < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/abemedia/appcast/releases/download/v0.1.0/appcast_0.1.0_linux_amd64"
-      sha256 "b3aacb07636714a2022ba0b8cb0639c8f8f9444fbc265d07648a99ee3f43d5f6"
+      sha256 "3531f09bf548118b5492b4694e222031303ef663eb5e70b117caff7034b3fb2c"
 
       def install
         bin.install "appcast_0.1.0_linux_amd64" => "appcast"
@@ -38,7 +38,7 @@ class Appcast < Formula
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/abemedia/appcast/releases/download/v0.1.0/appcast_0.1.0_linux_armv6"
-      sha256 "7671ac57c44acda8bab5e9372904a94dfa289716ef1761a3b4ca2ce8e8b963fa"
+      sha256 "e1ed8e457050befb109c5af85d8a45662d22a721a001cb055da42449249d6533"
 
       def install
         bin.install "appcast_0.1.0_linux_armv6" => "appcast"
@@ -46,7 +46,7 @@ class Appcast < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/abemedia/appcast/releases/download/v0.1.0/appcast_0.1.0_linux_arm64"
-      sha256 "ec0ccc213f95dad24d9ec733fe27c84484e3873331007867ce3fbf0e4cb206ba"
+      sha256 "d24daa3234aa08caa5f132d1508ead7be9a52eddb5298764ac4cc0f1f3c241d1"
 
       def install
         bin.install "appcast_0.1.0_linux_arm64" => "appcast"
